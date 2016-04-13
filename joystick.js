@@ -44,12 +44,16 @@ function Joystick(id, deadzone, sensitivity) {
         event.init = true;
       }
 
-      if (type & 0x01) {
+      else if (type & 0x01) {
         event.type = 'button';
       }
 
-      if (type & 0x02) {
+      else if (type & 0x02) {
         event.type = 'axis';
+      }
+      
+      else{
+        console.log('other joystick event');
       }
 
       event.id = self.id;
